@@ -1,0 +1,56 @@
+# ── 1. Secrets & credentials ──
+firmware/**/config.h
+backend/config.local.php
+.env
+.env.*
+!.env.example
+credentials.json
+google-services.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.keystore
+*.jks
+
+# ── 2. Dependencies ──
+node_modules/
+venv/
+env/
+.venv/
+vendor/
+__pycache__/
+
+# ── 3. IDE / editor ──
+.vscode/
+.idea/
+*.iml
+*.suo
+*.user
+*.swp
+.vs/
+
+# ── 4. OS generated ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── 5. Logs & build artifacts ──
+*.log
+build/
+dist/
+target/
+out/
+.gradle/
+.kotlin/
+.cxx/
+.externalNativeBuild/
+captures/
+local.properties
+*.apk
+*.aab
+.pio/
+*.bin
+*.elf
+*.hex
