@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===== INTERNET & NETWORK ===== -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- ===== BLUETOOTH (API 30+) ===== -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
+        tools:targetApi="s"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- ===== FOREGROUND SERVICE ===== -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH"/>
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
+    <!-- ===== NOTIFICATIONS ===== -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- ===== ALARM (nhắc thuốc) ===== -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- ===== WAKE LOCK (giữ CPU khi screen off) ===== -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- ===== THÊM MỚI: rung khi báo thuốc ===== -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/heartrat"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/heartrat"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HeartC"
+        android:usesCleartextTraffic="true">
+
+        <!-- ===== ACTIVITIES ===== -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HeartC.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+
+        <!-- ===== FOREGROUND SERVICE ===== -->
+        <service
+            android:name=".AppService$MonitoringService"
+            android:exported="false"
+            android:foregroundServiceType="health"/>
+
+        <!-- ===== ALARM RECEIVER ===== -->
+        <receiver
+            android:name=".AppService$MedicineAlarmReceiver"
+            android:exported="false"/>
+
+        <!-- ===== THÊM MỚI: nhận action từ nút notification ===== -->
+        <receiver
+            android:name=".AppService$MedicineActionReceiver"
+            android:exported="false"/>
+
+        <!-- ===== BOOT RECEIVER (khởi động lại alarm) ===== -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:padding="12dp">
+
+    <!-- Cột trái: thông tin thuốc -->
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical">
+
+        <TextView android:id="@+id/tv_medicine_name"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="16sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tv_medicine_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#1E88E5"/>
+
+        <TextView android:id="@+id/tv_medicine_note"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#757575" android:textSize="12sp"/>
+
+        <!-- THÊM MỚI: loại lịch hàng ngày / một lần -->
+        <TextView android:id="@+id/tv_medicine_repeat"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#1565C0"
+            android:layout_marginTop="2dp"/>
+
+        <!-- THÊM MỚI: lần xác nhận gần nhất -->
+        <TextView android:id="@+id/tv_medicine_last_action"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#00C853"
+            android:layout_marginTop="2dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- Cột phải: nút Sửa + Xóa (giữ nguyên) -->
+    <Button android:id="@+id/btn_edit_medicine"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Sửa" android:textSize="12sp"/>
+
+    <Button android:id="@+id/btn_delete_medicine"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Xóa" android:textSize="12sp"
+        android:backgroundTint="#E53935" android:textColor="@android:color/white"/>
+
+</LinearLayout>

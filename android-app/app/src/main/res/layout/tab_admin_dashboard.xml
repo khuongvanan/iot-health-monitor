@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Thiết bị đang đăng ký -->
+        <TextView
+            android:id="@+id/tv_admin_device_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device: --"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <!-- Toggle service -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Theo dõi tự động:" android:textSize="16sp"/>
+            <Switch android:id="@+id/sw_service"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Nút Quét & Đăng ký -->
+        <TextView
+            android:id="@+id/btn_register_device"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button_gradient"
+            android:text="QUÉT &amp; ĐĂNG KÝ THIẾT BỊ"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:elevation="4dp"/>
+
+        <!-- Trạng thái đăng ký -->
+        <TextView
+            android:id="@+id/tv_register_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text=""
+            android:textSize="13sp"
+            android:textColor="@color/colorTextSecondary"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

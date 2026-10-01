@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Giữ nguyên nút đăng xuất gốc -->
+    <item
+        android:id="@+id/action_signout"
+        android:title="Đăng xuất"
+        android:showAsAction="never" />
+
+    <!-- THÊM MỚI: Trạng thái kết nối -->
+    <item
+        android:id="@+id/action_connection_status"
+        android:title="Trạng thái kết nối"
+        android:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILE: res/color/input_stroke_color.xml  (tạo folder res/color/ nếu chưa có)
+    Color state list cho viền TextInputLayout.
+    Khi focused: màu primary xanh. Khi bình thường: xám nhạt.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#E53935" android:state_focused="true"/>
+    <item android:color="#CFD8DC"/>
+</selector>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILE: res/drawable/splash_screen.xml
+    MỤC ĐÍCH: Làm windowBackground cho SplashTheme.
+    Hiển thị NGAY LẬP TỨC khi người dùng nhấn icon app —
+    trước khi bất kỳ Activity hay layout nào được inflate.
+    Kết quả: không còn "màn trắng trống", logo xuất hiện ngay.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Nền trắng -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Logo app căn giữa, lệch lên trên một chút (giống splash thực tế) -->
+    <item
+        android:drawable="@drawable/heartrat"
+        android:gravity="center"
+        android:width="96dp"
+        android:height="96dp"
+        android:bottom="60dp"/>
+
+</layer-list>

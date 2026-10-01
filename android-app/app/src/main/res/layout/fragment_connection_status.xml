@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_connection_status.xml v2
+    THÊM:
+      - Button "Kiểm tra tất cả kết nối" ở đầu màn hình
+      - TextView tv_esp_sensors dưới thông tin ESP32 hiển thị trạng thái MAX30102/GY-906
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── NÚT KIỂM TRA TẤT CẢ (MỚI) ────────────────────── -->
+        <Button
+            android:id="@+id/btn_check_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kiểm tra tất cả kết nối"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <!-- ── CARD ESP32 ───────────────────────────────────── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📡  ESP32"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121" />
+                    <View
+                        android:id="@+id/dot_esp"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/status_dot_shape"
+                        android:backgroundTint="#9E9E9E" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_esp_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chưa nhận dữ liệu"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tv_esp_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="–"
+                    android:textSize="12sp"
+                    android:textColor="#BDBDBD" />
+                <!-- MỚI: Trạng thái cảm biến MAX30102 / GY-906 -->
+                <TextView
+                    android:id="@+id/tv_esp_sensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cảm biến: MAX30102 –  |  GY-906 –"
+                    android:textSize="12sp"
+                    android:textColor="#9E9E9E"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── CARD SERVER HTTP ──────────────────────────────── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🖥️  Server HTTP"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121" />
+                    <View
+                        android:id="@+id/dot_server"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/status_dot_shape"
+                        android:backgroundTint="#9E9E9E" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_server_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chưa kết nối"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tv_server_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="–"
+                    android:textSize="12sp"
+                    android:textColor="#BDBDBD" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── CARD MQTT ─────────────────────────────────────── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📶  MQTT Broker"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121" />
+                    <View
+                        android:id="@+id/dot_mqtt"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/status_dot_shape"
+                        android:backgroundTint="#9E9E9E" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_mqtt_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chưa kết nối"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tv_mqtt_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="–"
+                    android:textSize="12sp"
+                    android:textColor="#BDBDBD" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── CARD BLE (có nút Unpair / Quét & Kết nối) ──────── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔵  Bluetooth BLE"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121" />
+                    <View
+                        android:id="@+id/dot_ble"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/status_dot_shape"
+                        android:backgroundTint="#9E9E9E" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_ble_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chưa kết nối"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tv_ble_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="–"
+                    android:textSize="12sp"
+                    android:textColor="#BDBDBD"
+                    android:layout_marginBottom="14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btn_unpair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ngắt &amp; Unpair thiết bị"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#FF1744"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+                <Button
+                    android:id="@+id/btn_scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quét &amp; Kết nối thiết bị"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#00C853"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.Button" />
+
+                <TextView
+                    android:id="@+id/tv_ble_action_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#2196F3"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

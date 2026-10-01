@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary — Xanh dương tươi -->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorPrimaryLight">#BBDEFB</color>
+
+    <!-- Accent — Cam tươi -->
+    <color name="colorAccent">#FF6D00</color>
+
+    <!-- Gradient -->
+    <color name="gradientStart">#2196F3</color>
+    <color name="gradientEnd">#00BCD4</color>
+
+    <!-- Sensor Colors — tươi + dễ phân biệt -->
+    <color name="colorHeart">#FF1744</color>
+    <color name="colorHeartBg">#1AFF1744</color>
+    <color name="colorSpo2">#2979FF</color>
+    <color name="colorSpo2Bg">#1A2979FF</color>
+    <color name="colorTemp">#FF9100</color>
+    <color name="colorTempBg">#1AFF9100</color>
+
+    <!-- Status -->
+    <color name="colorNormal">#00C853</color>
+    <color name="colorWarning">#FFD600</color>
+    <color name="colorDanger">#FF1744</color>
+
+    <!-- UI -->
+    <color name="colorBackground">#F0F4F8</color>
+    <color name="colorCard">#FFFFFF</color>
+    <color name="colorTextPrimary">#1A237E</color>
+    <color name="colorTextSecondary">#546E7A</color>
+    <color name="colorDivider">#E0E0E0</color>
+
+    <!-- Cơ bản -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

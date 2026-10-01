@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILE: res/values/themes.xml
+-->
+<resources>
+
+    <!-- ═══ THEME CHÍNH ═══ -->
+    <style name="Theme.HeartC" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <!--
+        ═══ SPLASH THEME ═══
+        Dùng cho LoginActivity (launcher activity) trong AndroidManifest.
+        Hiển thị splash_screen.xml ngay lập tức trước khi layout inflate.
+
+        Trong AndroidManifest.xml, sửa LoginActivity thành:
+            <activity
+                android:name=".LoginActivity"
+                android:theme="@style/Theme.HeartC.Splash"
+                android:exported="true">
+    -->
+    <style name="Theme.HeartC.Splash" parent="Theme.HeartC">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- ═══ TEXTINPUTLAYOUT — bo góc mềm ═══ -->
+    <style name="Widget.HeartC.TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/input_stroke_color</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/colorTextSecondary</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <!-- ═══ BUTTON CHÍNH ═══ -->
+    <style name="Widget.HeartC.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">28dp</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+</resources>

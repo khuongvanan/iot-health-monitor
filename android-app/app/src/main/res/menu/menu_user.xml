@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_dashboard"
+        android:title="Trang chủ"
+        android:icon="@drawable/home"/>
+    <item android:id="@+id/nav_history"
+        android:title="Lịch sử"
+        android:icon="@drawable/chart"/>
+    <item android:id="@+id/nav_profile"
+        android:title="Tài khoản"
+        android:icon="@drawable/users"/>
+</menu>

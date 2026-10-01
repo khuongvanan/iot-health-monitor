@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILE: res/drawable/bg_login_top.xml
+    Gradient đỏ pastel cực nhạt → trắng — tạo chiều sâu cho nền login.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="#FFEBEE"
+        android:centerColor="#FFF3F3"
+        android:endColor="#FFFFFF"
+        android:type="linear"/>
+</shape>

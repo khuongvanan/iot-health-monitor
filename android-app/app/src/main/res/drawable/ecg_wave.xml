@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FILE: res/drawable/ecg_wave.xml
+    Đường điện tâm đồ trang trí phía dưới màn hình Login.
+    Màu đỏ, đường mảnh sắc, lặp 4 nhịp.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="72dp"
+    android:viewportWidth="360"
+    android:viewportHeight="72">
+
+    <!-- Fill mờ đỏ phía dưới đường (chiều sâu nhẹ) -->
+    <path
+        android:fillColor="#12E53935"
+        android:pathData="
+            M0,44
+            L22,44 L24,42 L26,44
+            L37,44 L39,40 L41,8 L43,60 L45,46 L47,44
+            L56,44 L58,41 L60,38 L62,41 L64,44
+            L84,44
+            L86,42 L88,44
+            L99,44 L101,40 L103,8 L105,60 L107,46 L109,44
+            L118,44 L120,41 L122,38 L124,41 L126,44
+            L146,44
+            L148,42 L150,44
+            L161,44 L163,40 L165,8 L167,60 L169,46 L171,44
+            L180,44 L182,41 L184,38 L186,41 L188,44
+            L208,44
+            L210,42 L212,44
+            L223,44 L225,40 L227,8 L229,60 L231,46 L233,44
+            L242,44 L244,41 L246,38 L248,41 L250,44
+            L270,44
+            L272,42 L274,44
+            L285,44 L287,40 L289,8 L291,60 L293,46 L295,44
+            L304,44 L306,41 L308,38 L310,41 L312,44
+            L360,44
+            L360,72 L0,72 Z"/>
+
+    <!-- Đường baseline mờ -->
+    <path
+        android:strokeColor="#FFCDD2"
+        android:strokeWidth="0.6"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M0,44 L360,44"/>
+
+    <!-- Đường ECG chính — mảnh, sắc, màu đỏ -->
+    <path
+        android:strokeColor="#E53935"
+        android:strokeWidth="1.6"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="
+            M0,44
+            L22,44
+            L24,42 L26,44
+            L37,44
+            L39,40 L41,8 L43,60 L45,46 L47,44
+            L56,44
+            L58,41 L60,38 L62,41 L64,44
+            L84,44
+            L86,42 L88,44
+            L99,44
+            L101,40 L103,8 L105,60 L107,46 L109,44
+            L118,44
+            L120,41 L122,38 L124,41 L126,44
+            L146,44
+            L148,42 L150,44
+            L161,44
+            L163,40 L165,8 L167,60 L169,46 L171,44
+            L180,44
+            L182,41 L184,38 L186,41 L188,44
+            L208,44
+            L210,42 L212,44
+            L223,44
+            L225,40 L227,8 L229,60 L231,46 L233,44
+            L242,44
+            L244,41 L246,38 L248,41 L250,44
+            L270,44
+            L272,42 L274,44
+            L285,44
+            L287,40 L289,8 L291,60 L293,46 L295,44
+            L304,44
+            L306,41 L308,38 L310,41 L312,44
+            L360,44"/>
+
+</vector>
