@@ -95,6 +95,12 @@ iot-health-monitor/
 - **Admin screens:** user management, device registration, per-user tracking, medication scheduling
 - **Background:** foreground `MonitoringService` (health type), exact-alarm medication reminders, `BootReceiver` to restore alarms, `SyncWorker` for offline data
 
+### Android app screenshots
+
+| Sign in | Monitoring dashboard | Measurement history |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/login.png" alt="Android sign-in screen" width="220"> | <img src="docs/screenshots/dashboard.png" alt="Monitoring dashboard showing BLE and MQTT connection status" width="220"> | <img src="docs/screenshots/history.png" alt="Daily heart rate, oxygen saturation, and temperature charts" width="220"> |
+
 ## REST API
 
 | Method | Endpoint | Auth | Description |
