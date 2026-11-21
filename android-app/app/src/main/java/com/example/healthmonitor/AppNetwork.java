@@ -349,7 +349,7 @@ public class AppNetwork {
                 String uuid = ch.getUuid().toString();
                 byte[] raw = ch.getValue();
                 String content = (raw != null) ? new String(raw, StandardCharsets.UTF_8) : "";
-                Log.d(TAG, "BLE notify uuid=" + uuid + " content=" + content);
+                
                 boolean isJson = !content.isEmpty() && content.charAt(0) == '{';
                 if (isJson) {
                     parseAndNotify(raw);
