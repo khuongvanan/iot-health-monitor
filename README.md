@@ -71,8 +71,22 @@ iot-health-monitor/
 │   ├── database/schema.sql    # 7 tables
 │   ├── database/seed_admin.sql
 │   └── tools/gen_hash.php
-├── android-app/               # Android app (Java)
-```
+├── android-app/                           # Android app (Java)
+    ├── app/src/main/
+    │   ├── AndroidManifest.xml
+    │   ├── java/com/example/healthmonitor/
+    │   │   ├── MainActivity.java
+    │   │   ├── LoginActivity.java
+    │   │   ├── UserDashboardFragment.java
+    │   │   ├── AppNetwork.java
+    │   │   ├── AppDatabase.java
+    │   │   ├── AppService.java
+    │   │   └── ...                        # Other app classes
+    │   └── res/                           # Layouts, drawables, and other resources
+    ├── build.gradle.kts
+    ├── settings.gradle.kts
+    ├── gradlew
+    └── gradlew.bat
 
 ## Android app
 
