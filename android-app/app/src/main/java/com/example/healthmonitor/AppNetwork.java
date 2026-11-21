@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import okhttp3.*;
-import okhttp3.logging.HttpLoggingInterceptor;
+
 import retrofit2.*;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.*;
@@ -82,8 +82,8 @@ public class AppNetwork {
 
         public static ApiService getInstance() {
             if (INSTANCE == null) {
-                HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-                logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+                
+                
                 OkHttpClient client = new OkHttpClient.Builder()
                         .addInterceptor(chain -> {
                             Request req = chain.request().newBuilder()
@@ -92,7 +92,7 @@ public class AppNetwork {
                                     .build();
                             return chain.proceed(req);
                         })
-                        .addInterceptor(logging)
+                        
                         .connectTimeout(30, TimeUnit.SECONDS)
                         .readTimeout(30, TimeUnit.SECONDS)
                         .writeTimeout(30, TimeUnit.SECONDS)
