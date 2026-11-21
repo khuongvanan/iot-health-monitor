@@ -12,13 +12,13 @@ End-to-end IoT system that measures **heart rate, SpO₂ and body temperature** 
 
 ## Highlights
 
-- **Multi-channel delivery:** one measurement goes out over BLE notify, MQTT publish and HTTP POST, so the data still reaches the server when the phone is out of range, and the app still works when WiFi is down.
-- **Duplicate-command protection:** the app can send `START_MEASURE` over BLE and MQTT at once. The firmware uses a measurement lock, a 10 s debounce window and drains the MQTT queue before unlocking, so one tap triggers exactly one measurement.
-- **Robust signal processing:** 160 PPG samples are processed with sliding 100-sample windows (Maxim algorithm). Out-of-range values are rejected, then the **median** is taken for HR and SpO₂.
-- **Guided measurement flow:** finger detection by IR threshold, forehead detection by object-vs-ambient temperature delta, with live status (`WAITING_FINGER`, `MEASURING_HR`, `MEASURE_DONE`, …) pushed to the app.
-- **Multi-user, role-based backend:** JWT auth, admin/guest roles, device registration, per-user measurement history.
-- **Medication reminders:** exact alarms that survive reboot (`BootReceiver`), with taken/skipped confirmation synced to the server.
-- **Offline-first app:** readings are cached in Room and synced later with WorkManager.
+- *Multi-channel delivery:** one measurement goes out over BLE notify, MQTT publish and HTTP POST, so the data still reaches the server when the phone is out of range, and the app still works when WiFi is down.
+- *Duplicate-command protection:** the app can send `START_MEASURE` over BLE and MQTT at once. The firmware uses a measurement lock, a 10 s debounce window and drains the MQTT queue before unlocking, so one tap triggers exactly one measurement.
+- *Robust signal processing:** 160 PPG samples are processed with sliding 100-sample windows (Maxim algorithm). Out-of-range values are rejected, then the *median* is taken for HR and SpO₂.
+- *Guided measurement flow:** finger detection by IR threshold, forehead detection by object-vs-ambient temperature delta, with live status (`WAITING_FINGER`, `MEASURING_HR`, `MEASURE_DONE`, …) pushed to the app.
+- *Multi-user, role-based backend:** JWT auth, admin/guest roles, device registration, per-user measurement history.
+- *Medication reminders:** exact alarms that survive reboot (`BootReceiver`), with taken/skipped confirmation synced to the server.
+- *Offline-first app:** readings are cached in Room and synced later with WorkManager.
 
 ## System architecture
 
